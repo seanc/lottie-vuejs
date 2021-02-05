@@ -46,6 +46,11 @@ export default {
       required: false,
       default: 0
     },
+    renderer: {
+      type: String,
+      required: false,
+      default: 'svg'
+    }
   },
   data: () => ({
     name: 'lottie-animation',
@@ -83,7 +88,7 @@ export default {
 
       this.anim = lottie.loadAnimation({
         container: this.$refs.lavContainer,
-        renderer: "svg",
+        renderer: this.renderer,
         loop: this.loop,
         autoplay: this.autoPlay,
         animationData: jsonData,
